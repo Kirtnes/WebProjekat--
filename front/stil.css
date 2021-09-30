@@ -1,0 +1,111 @@
+*{
+    margin: 0;
+  
+}
+
+head,body{
+    background-color: rgb(44, 24, 2);
+    font-family: sans-serif;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+.sediste{
+    
+    font-family: Brush Script MT, Brush Script Std, cursive;
+    width:100px;
+    height:120px;
+    margin: auto;
+    border-color:rgb(185, 245, 157);
+    border-style: outset;
+    border-radius: 25px;
+    text-align:center;
+    font-size: 0.7vw;
+
+}
+.kontSedista{
+    margin-top: 2%;
+    background-color: rgb(85, 66, 47);
+    padding:20px;
+    border-radius: 25px;
+}
+
+.kontForma{
+    margin-top: 5%;
+    padding:20px;
+    border-radius: 25px;
+    background-color:rgb(117, 93, 93);
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
+    
+    
+}
+.ekran{
+    font-family: Brush Script MT, Brush Script Std, cursive;
+    display:flex;
+    margin:auto;
+    height: 80%;
+    width: 80%;
+    padding:20px;
+    border-radius: 25px;
+    /*background-color: rgb(75, 69, 17);*/
+    background-color: rgb(224, 253, 253);
+}
+.nivo{
+    padding:2px;
+   
+    max-height: fit-content;
+    max-width: fit-content;
+    font-family: Brush Script MT, Brush Script Std, cursive;
+    display:block;
+ 
+    text-align: center;
+}
+.redovi{
+    
+  
+}
+
+.red{
+    
+    margin:auto;
+
+    display:flex;
+    flex-direction: row;
+}
+
+.lab{
+    font-family: Brush Script MT, Brush Script Std, cursive;
+    float:right;
+}
+.input{
+    border-radius: 25px;
+}
+.zauzmiMesto, .oslobodiMesto{
+   
+    min-width: fit-content;
+    min-height: fit-content;
+    border-radius: 25px;
+}
+
+@media (max-width: 1200px) {
+
+
+
+    .kontForma{
+  
+        padding:20px;
+        border-radius: 25px;
+        background-color:gainsboro;
+        display: flex;
+        flex-direction: column;
+        align-content: center;
+        
+       
+    }
+
+
+}

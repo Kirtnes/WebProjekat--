@@ -1,0 +1,92 @@
+import { Sala } from "./Sala.js";
+import { Osoba } from "./Osoba.js";
+export class Sediste{
+    constructor(osoba){
+        this.osoba = osoba;
+        this.slobodno = true;
+        this.sedisteKontejner=null;
+    }
+
+    crtajSediste(host){
+        this.sedisteKontejner = document.createElement("div");
+        // this.sedisteKontejner.addEventListener("click", () =>{
+        // confirm(`Mesto broj ${this.vratiBrojKarte()} je zauzeto od strane osobe: ${this.vratiIme()} ${this.vratiPrezime()}`);
+
+        // });
+        this.sedisteKontejner.classList.add("sediste");
+        this.sedisteKontejner.innerHTML="Slobodno";
+        this.sedisteKontejner.style.backgroundColor="rgb(153, 237, 195)";
+        host.appendChild(this.sedisteKontejner);
+        
+    }
+
+    // this.sedisteKontejner.addEventListener("click", () =>{
+    //     confirm(`Mesto broj ${this.vratiBrojKarte()} je zauzeto od strane osobe: ${this.vratiIme()} ${this.vratiPrezime()}`);
+
+    //     });
+
+    
+    //ZAUZMI SEDISTE
+    zauzmiSediste(osoba){
+        this.osoba=osoba;
+        this.slobodno=false;
+        this.sedisteKontejner.style.borderColor = "rgb(170, 72, 72)"; 
+        this.sedisteKontejner.style.backgroundColor="rgb(188, 84, 75)";
+        this.sedisteKontejner.innerHTML = "Zauzeto";  
+        let x=1;
+  
+         this.sedisteKontejner.addEventListener("click", () =>{
+            
+            if(x==1 && this.slobodno==false){
+            this.sedisteKontejner.innerHTML="Mesto broj:" + "<br />" +  this.vratiBrojKarte() + "<br />" + "Ime:" + "<br />" + this.vratiIme() + "<br />" + "Prezime:" + "<br />" + this.vratiPrezime();
+            this.sedisteKontejner.style.borderColor = "rgb(170, 72, 72)"; 
+            x=0;
+            }
+            else if(x==0 & this.slobodno==false){
+            this.sedisteKontejner.innerHTML="Zauzeto";
+            this.sedisteKontejner.style.borderColor = "rgb(170, 72, 72)"; 
+            x=1;
+            }
+            
+
+                }
+            
+            );
+
+
+    }
+
+    oslobodiSediste(osoba){
+        this.osoba.ime = undefined;
+        this.osoba.prezime = undefined;
+        this.slobodno=true;
+        this.sedisteKontejner.innerHTML = "Slobodno"; 
+        this.sedisteKontejner.style.borderColor="rgb(185, 245, 157)";
+        this.sedisteKontejner.style.backgroundColor="rgb(153, 237, 195)";
+    }
+
+    izmeniSediste(osoba){
+        this.osoba=osoba;
+        this.slobodno=false;
+        this.sedisteKontejner.innerHTML="Mesto broj:" + "<br />" +  this.vratiBrojKarte() + "<br />" + "Ime:" + "<br />" + this.vratiIme() + "<br />" + "Prezime:" + "<br />" + this.vratiPrezime();
+    }
+
+    vratiIme(){
+        return this.osoba.ime;
+    }
+    vratiPrezime(){
+        return this.osoba.prezime;
+    }
+    vratiBrojKarte(){
+        return this.osoba.brojKarte;
+    }
+
+    izmeniPodatke(ime, prezime, email){
+        this.ime=ime;
+        this.prezime=prezime;
+        this.email=email;
+
+        this.sedisteKontejner.innerHTML="Mesto broj:" + "<br />" +  this.vratiBrojKarte() + "<br />" + "Ime:" + "<br />" + this.vratiIme() + "<br />" + "Prezime:" + "<br />" + this.vratiPrezime();
+        console.log("Mesto broj:" + "<br />" +  this.vratiBrojKarte() + "<br />" + "Ime:" + "<br />" + this.vratiIme() + "<br />" + "Prezime:" + "<br />" + this.vratiPrezime());
+    }
+}
